@@ -1,0 +1,35 @@
+#include <iostream>
+#include <algorithm>
+#include <cctype>
+using namespace std;
+
+class StringConverter {
+public:
+
+    void toUpperCase(string &str) {
+        transform(str.begin(), str.end(), str.begin(), ::toupper);
+    }
+
+
+    void toLowerCase(string &str) {
+        transform(str.begin(), str.end(), str.begin(), ::tolower);
+    }
+};
+
+int main() {
+    StringConverter converter;
+    string str;
+
+    cout << "Enter a string: ";
+    getline(cin, str);
+
+  
+    converter.toUpperCase(str);
+    cout << "Uppercase: " << str << endl;
+
+
+    converter.toLowerCase(str);
+    cout << "Lowercase: " << str << endl;
+
+    return 0;
+}
